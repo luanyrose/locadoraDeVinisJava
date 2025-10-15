@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 class CompraVinil extends Vinil {
     public CompraVinil(int id, String nome, Date anoLancamento, String autoria,
                        float precoAluguel, float precoCompra, int quantidadeEstoque) {
@@ -8,4 +9,8 @@ class CompraVinil extends Vinil {
     public float calcularPreco() {
         return precoCompra;
     }
+=======
+public class Compra {
+    
+>>>>>>> Stashed changes
 }

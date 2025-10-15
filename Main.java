@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import java.time.LocalDate;
 import java.util.*;
 
@@ -275,6 +276,9 @@ public class Main {
     // =============================
     // MAIN (TESTES)
     // =============================
+=======
+public class Main {
+>>>>>>> Stashed changes
     public static void main(String[] args) {
         // ==== FUNCIONÁRIOS ====
         Funcionario f1 = new Funcionario(1, "Ana", "111.222.333-44", "Atendente", "40h");
@@ -291,16 +295,24 @@ public class Main {
         Genero g2 = new Genero("Jazz");
         Genero g3 = new Genero("MPB");
 
+<<<<<<< Updated upstream
         // ==== VINIS (3 objetos de exemplo) ====
         Vinil v1 = new CompraVinil(1, "Dark Side of the Moon", LocalDate.of(1973, 3, 1), "Pink Floyd", 0f, 150f, 5);
         Vinil v2 = new AluguelVinil(2, "Kind of Blue", LocalDate.of(1959, 8, 17), "Miles Davis", 10f, 120f, 3, 2, 15f, LocalDate.now());
         Vinil v3 = new CompraVinil(3, "Elis & Tom", LocalDate.of(1974, 1, 1), "Elis Regina", 0f, 180f, 2);
 
+=======
+        // ==== VINIS ====
+        Vinil v1 = new CompraVinil(1, "Dark Side of the Moon", new Date(), "Pink Floyd", 0, 150, 5);
+        Vinil v2 = new AluguelVinil(2, "Kind of Blue", new Date(), "Miles Davis", 10, 120, 3, 2, 15, new Date());
+        Vinil v3 = new CompraVinil(3, "Elis & Tom", new Date(), "Elis Regina", 0, 180, 2);
+>>>>>>> Stashed changes
         v1.adicionarGenero(g1);
         v2.adicionarGenero(g2);
         v3.adicionarGenero(g3);
 
         // ==== FORMAS DE PAGAMENTO ====
+<<<<<<< Updated upstream
         FormaDePagamento fp1 = new FormaDePagamento(500f);
         FormaDePagamento fp2 = new FormaDePagamento(1000f);
         FormaDePagamento fp3 = new FormaDePagamento(200f);
@@ -308,14 +320,30 @@ public class Main {
         // ==== CARTÕES ====
         CartaoCredito cc1 = new CartaoCredito("1234-5678-9012-3456", 1000f);
         CartaoDebito cd1 = new CartaoDebito("4321-8765-2109-6543", 300f);
+=======
+        FormaDePagamento fp1 = new FormaDePagamento(500);
+        FormaDePagamento fp2 = new FormaDePagamento(1000);
+        FormaDePagamento fp3 = new FormaDePagamento(200);
+
+        // ==== CARTÕES ====
+        CartaoCredito cc1 = new CartaoCredito("1234", 1000);
+        CartaoDebito cd1 = new CartaoDebito("4321", 300);
+>>>>>>> Stashed changes
 
         fp1.adicionarCartaoCredito(cc1);
         fp1.adicionarCartaoDebito(cd1);
 
+<<<<<<< Updated upstream
         // ==== TRANSAÇÕES (3 exemplos) ====
         Transacao t1 = new Transacao(1, LocalDate.now(), f1, c1);
         Transacao t2 = new Transacao(2, LocalDate.now(), f2, c2);
         Transacao t3 = new Transacao(3, LocalDate.now(), f3, c3);
+=======
+        // ==== TRANSAÇÕES ====
+        Transacao t1 = new Transacao(1, new Date(), f1, c1);
+        Transacao t2 = new Transacao(2, new Date(), f2, c2);
+        Transacao t3 = new Transacao(3, new Date(), f3, c3);
+>>>>>>> Stashed changes
 
         t1.adicionarItem(v1, 1);
         t1.adicionarItem(v2, 2);
@@ -327,13 +355,23 @@ public class Main {
         t3.adicionarFormaPagamento(fp3);
 
         // ==== CAIXAS ====
+<<<<<<< Updated upstream
         Caixa caixa1 = new Caixa(f3, 1000f, 300f);
         Caixa caixa2 = new Caixa(f1, 800f, 200f);
         Caixa caixa3 = new Caixa(f2, 1200f, 400f);
+=======
+        Caixa caixa1 = new Caixa(f3, 1000, 300);
+        Caixa caixa2 = new Caixa(f1, 800, 200);
+        Caixa caixa3 = new Caixa(f2, 1200, 400);
+>>>>>>> Stashed changes
 
         // ==== EXIBIR RECIBOS ====
         System.out.println(t1.gerarRecibo());
         System.out.println(t2.gerarRecibo());
         System.out.println(t3.gerarRecibo());
+<<<<<<< Updated upstream
     }
 }
+=======
+    }
+>>>>>>> Stashed changes
