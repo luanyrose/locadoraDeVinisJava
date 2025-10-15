@@ -1,4 +1,5 @@
 public class ItemCompra {
+    // Item que liga um vinil à compra, com quantidade e valor calculado
     private Vinil vinil;
     private int quantidade;
     private double valorItem;

@@ -1,34 +1,51 @@
+// Representa um disco de vinil vendido/locado na loja.
 public class Vinil {
+    // Atributos simples do vinil
     private int codigo;
     private String titulo;
     private String artista;
-    private String genero;
     private double precoVenda;
-    private boolean disponivel;
+    private double precoAluguel;
+    private String genero;
+    private int qtdDisponivel;
 
-    public Vinil(int codigo, String titulo, String artista, String genero, double precoVenda) {
+    public Vinil(int codigo, String titulo, String artista,
+                 double precoVenda, double precoAluguel, int qtdDisponivel,
+                 String genero) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.artista = artista;
-        this.genero = genero;
         this.precoVenda = precoVenda;
-        this.disponivel = true;
+        this.precoAluguel = precoAluguel;
+        this.qtdDisponivel = qtdDisponivel;
+        this.genero = genero;
     }
 
-    public double getPrecoVenda() {
-        return precoVenda;
-    }
+    public int getCodigo() { return codigo; }
+    public String getTitulo() { return titulo; }
+    public String getArtista() { return artista; }
+    public double getPrecoVenda() { return precoVenda; }
+    public double getPrecoAluguel() { return precoAluguel; }
+    public String getGenero() { return genero; }
+    public int getQtdDisponivel() { return qtdDisponivel; }
 
-    public boolean isDisponivel() {
-        return disponivel;
-    }
-
-    public void setDisponivel(boolean disponivel) {
-        this.disponivel = disponivel;
+    // Baixa a quantidade do estoque deste vinil (evita negativo)
+    public void diminuirEstoque(int quantidade) {
+        if (quantidade <= 0) return;
+        if (qtdDisponivel >= quantidade) {
+            qtdDisponivel -= quantidade;
+        }
     }
 
     @Override
     public String toString() {
-        return "Vinil: " + titulo + " - " + artista + " (" + genero + ")";
+        return "Vinil{" +
+                "codigo=" + codigo +
+                ", titulo='" + titulo + '\'' +
+                ", artista='" + artista + '\'' +
+                ", genero='" + genero + '\'' +
+                ", precoVenda=" + precoVenda +
+                ", qtdDisponivel=" + qtdDisponivel +
+                '}';
     }
 }

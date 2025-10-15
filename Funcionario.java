@@ -1,4 +1,5 @@
 public class Funcionario extends Pessoa {
+    // Cargo e salário do funcionário da loja
     private String cargo;
     private double salario;
 
