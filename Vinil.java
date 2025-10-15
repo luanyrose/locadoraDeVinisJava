@@ -1,17 +1,37 @@
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 
 public class Vinil {
-    
-}
-public class vinil extends Album {
-    private Int Id;
-    private String Nome;
-    private Date Ano_lancamento;
+    protected int id;
+    protected String nome;
+    protected Date anoLancamento;
+    protected String autoria;
+    protected float precoAluguel;
+    protected float precoCompra;
+    protected List<Genero> generos;
+    protected int quantidadeEstoque;
 
-    public Vinil(String Autoria, Float preco_aluguel, Float preco_compra,
-    int quantidade_estoque) {
-        super(Id, Nome, Ano_lancamento);
+    public Vinil(int id, String nome, Date anoLancamento, String autoria,
+                 float precoAluguel, float precoCompra, int quantidadeEstoque) {
+        this.id = id;
+        this.nome = nome;
+        this.anoLancamento = anoLancamento;
+        this.autoria = autoria;
+        this.precoAluguel = precoAluguel;
+        this.precoCompra = precoCompra;
+        this.quantidadeEstoque = quantidadeEstoque;
+        this.generos = new ArrayList<>();
+    }
+
+    public void adicionarGenero(Genero g) {
+        generos.add(g);
+    }
+
+    public float calcularPreco() {
+        return precoCompra;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " - " + autoria + " (" + anoLancamento + ")";
     }
 }
