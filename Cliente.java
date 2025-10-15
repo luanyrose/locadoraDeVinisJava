@@ -1,25 +1,22 @@
-class Cliente {
-    private int id;
-    private String nome;
-    private String email;
-    private String telefone;
-    private String cpf;
-    private String identidade;
-    private String endereco;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Cliente(int id, String nome, String email, String telefone,
-                   String cpf, String identidade, String endereco) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-        this.cpf = cpf;
-        this.identidade = identidade;
-        this.endereco = endereco;
+public class Cliente extends Pessoa {
+    private String tipoCliente;
+    private List<Compra> historicoCompras;
+
+    public Cliente(String nome, String cpf, String email, String tipoCliente) {
+        super(nome, cpf, email);
+        this.tipoCliente = tipoCliente;
+        this.historicoCompras = new ArrayList<>();
+    }
+
+    public void adicionarCompra(Compra compra) {
+        historicoCompras.add(compra);
     }
 
     @Override
-    public String toString() {
-        return nome + " (" + cpf + ")";
+    public void exibirInfo() {
+        System.out.println("Cliente: " + nome + " | Tipo: " + tipoCliente);
     }
 }

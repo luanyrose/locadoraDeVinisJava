@@ -1,27 +1,15 @@
-class Funcionario {
-    private int id;
-    private String nome;
-    private String cpf;
-    private int telefone;
-    private String identidade;
-    private String cargaHoraria;
-    private String funcao;
-    private int idClt;
+public class Funcionario extends Pessoa {
+    private String cargo;
+    private double salario;
 
-    public Funcionario(int id, String nome, String cpf, int telefone,
-                       String identidade, String cargaHoraria, String funcao, int idClt) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.identidade = identidade;
-        this.cargaHoraria = cargaHoraria;
-        this.funcao = funcao;
-        this.idClt = idClt;
+    public Funcionario(String nome, String cpf, String email, String cargo, double salario) {
+        super(nome, cpf, email);
+        this.cargo = cargo;
+        this.salario = salario;
     }
 
     @Override
-    public String toString() {
-        return nome + " - " + funcao;
+    public void exibirInfo() {
+        System.out.println("Funcionário: " + nome + " | Cargo: " + cargo + " | Salário: R$" + salario);
     }
 }

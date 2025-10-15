@@ -1,37 +1,34 @@
-import java.util.*;
-
 public class Vinil {
-    protected int id;
-    protected String nome;
-    protected Date anoLancamento;
-    protected String autoria;
-    protected float precoAluguel;
-    protected float precoCompra;
-    protected List<Genero> generos;
-    protected int quantidadeEstoque;
+    private int codigo;
+    private String titulo;
+    private String artista;
+    private String genero;
+    private double precoVenda;
+    private boolean disponivel;
 
-    public Vinil(int id, String nome, Date anoLancamento, String autoria,
-                 float precoAluguel, float precoCompra, int quantidadeEstoque) {
-        this.id = id;
-        this.nome = nome;
-        this.anoLancamento = anoLancamento;
-        this.autoria = autoria;
-        this.precoAluguel = precoAluguel;
-        this.precoCompra = precoCompra;
-        this.quantidadeEstoque = quantidadeEstoque;
-        this.generos = new ArrayList<>();
+    public Vinil(int codigo, String titulo, String artista, String genero, double precoVenda) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.artista = artista;
+        this.genero = genero;
+        this.precoVenda = precoVenda;
+        this.disponivel = true;
     }
 
-    public void adicionarGenero(Genero g) {
-        generos.add(g);
+    public double getPrecoVenda() {
+        return precoVenda;
     }
 
-    public float calcularPreco() {
-        return precoCompra;
+    public boolean isDisponivel() {
+        return disponivel;
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
     }
 
     @Override
     public String toString() {
-        return nome + " - " + autoria + " (" + anoLancamento + ")";
+        return "Vinil: " + titulo + " - " + artista + " (" + genero + ")";
     }
 }
